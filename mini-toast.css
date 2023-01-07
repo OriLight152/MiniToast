@@ -1,0 +1,57 @@
+.__minitoast_container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 600px;
+}
+
+.__minitoast_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 20px;
+  max-width: 600px;
+  min-width: 300px;
+  z-index: 9999;
+  padding: 18px 30px;
+  margin: 5px 0;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 10px 0 rgb(0 0 0 / 10%), 0 2px 15px 0 rgb(0 0 0 / 5%);
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.__minitoast_item_info {
+  background-color: #2196f3;
+}
+
+.__minitoast_item_success {
+  background-color: #4caf50;
+}
+
+.__minitoast_item_warning {
+  background-color: #ffc107;
+}
+
+.__minitoast_item_danger {
+  background-color: #ff5252;
+}
+
+.__minitoast_item_show {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.__minitoast_item_icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.__minitoast_item_text {
+  flex: 1;
+}

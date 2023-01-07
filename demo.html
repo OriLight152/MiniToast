@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniToast Demo</title>
+    <link rel="stylesheet" href="./mini-toast.css">
+    <script src="./mini-toast.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100vw;
+            min-height: 100vh;
+        }   
+
+        .container>div>* {
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <div>
+            <h1>MiniToast Demo</h1>
+            <p>文本 Text：<input type="text" id="text" value="测试测试"></p>
+            <p>时间 Time（毫秒 ms）：<input type="text" id="duration" value="3000"></p>
+            <p>类型 Type：
+                <input type="radio" name="toast_type" id="r_info" value="info" checked><label for="r_info">info</label>
+                <input type="radio" name="toast_type" id="r_success" value="success"><label
+                    for="r_success">success</label>
+                <input type="radio" name="toast_type" id="r_warning" value="warning"><label
+                    for="r_warning">warning</label>
+                <input type="radio" name="toast_type" id="r_danger" value="danger"><label for="r_danger">danger</label>
+            </p>
+            <p><button onclick="btnShowToast()">Show Toast</button></p>
+        </div>
+    </div>
+
+    <script>
+        let textInput = document.getElementById('text')
+        let durationInput = document.getElementById('duration')
+
+        function btnShowToast() {
+            let radios = document.getElementsByName('toast_type')
+            let type = 'info'
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    type = radios[i].value
+                    break
+                }
+            }
+            showToast(textInput.value, type, Number(durationInput.value))
+        }
+    </script>
+</body>
+
+</html>
