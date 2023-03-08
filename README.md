@@ -1,3 +1,3 @@
 # MiniToast
 
-[Demo](https://orilight152.github.io/MiniToast/demo.html)
+[Demo](https://orilights.github.io/MiniToast/demo.html)
